@@ -196,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/首页" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -205,42 +205,22 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/归档" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/标签" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/关于" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-search">
-          <a href="/搜索" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            搜索
           </a>
         </li>
       
@@ -292,7 +272,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/18/boujour/" itemprop="url">boujour</a></h1>
+                <a class="post-title-link" href="/2017/07/18/boujour/" itemprop="url">Markdown 语法的简要规则</a></h1>
         
 
         <div class="post-meta">
@@ -341,7 +321,34 @@
       
         
           
-            
+            <h3 id="1-斜体和粗体"><a href="#1-斜体和粗体" class="headerlink" title="1. 斜体和粗体"></a>1. 斜体和粗体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">*斜体*或_斜体_</div><div class="line">**粗体**</div><div class="line">***加粗斜体***</div><div class="line">~~删除线~~</div></pre></td></tr></table></figure>
+<p><strong>显示效果：</strong><br>    1.<em>这是一段斜体</em><br>    2.<strong>这是一段粗体</strong><br>    3.<strong><em>这是一段加粗斜体</em></strong><br>    4.<del>这是一段删除线</del></p>
+<h3 id="2-分级标题"><a href="#2-分级标题" class="headerlink" title="2. 分级标题"></a>2. 分级标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">这是一个一级标题</div><div class="line">============================</div><div class="line">这是一个二级标题</div><div class="line">--------------------------------------------------</div></pre></td></tr></table></figure>
+<p>or 你可以这样写：（显示效果不演示，很简单，一级标题字号最大，依级递减）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 一级标题</div><div class="line">## 二级标题</div><div class="line">### 三级标题</div><div class="line">#### 四级标题</div><div class="line">##### 五级标题</div><div class="line">###### 六级标题</div></pre></td></tr></table></figure></p>
+<h3 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h3><p>2.1. 无序列表，使用 +，- 表示无序列表。<br><strong>代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- 无序列表项 一</div><div class="line">- 无序列表项 二</div><div class="line">- 无序列表项 三</div></pre></td></tr></table></figure></p>
+<p><strong>显示效果：</strong></p>
+<ul>
+<li>无序列表项 一</li>
+<li>无序列表项 二</li>
+<li>无序列表项 三<br>2.2. 有序列表，有序列表则使用数字接着一个英文句点。<br><strong>代码：</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 有序列表项 一</div><div class="line">2. 有序列表项 二</div><div class="line">3. 有序列表项 三</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>显示效果：</strong></p>
+<ol>
+<li>有序列表项 一</li>
+<li>有序列表项 二</li>
+<li>有序列表项 三</li>
+</ol>
+<p>2.3. 定义型列表，定义型列表由名词和解释组成。一行写上定义，紧跟一行写上解释。解释的写法:紧跟一个缩进(Tab)<br><strong>代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Markdown</div><div class="line">:    轻量级文本标记语言，可以转换成html，pdf等格式（左侧有一个可见的冒号和四个不可见的空格）</div><div class="line">代码块 2</div><div class="line">:   这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）</div><div class="line">        代码块（左侧有八个不可见的空格）</div></pre></td></tr></table></figure></p>
+<p><strong>显示效果：</strong><br>Markdown<br>   :    轻量级文本标记语言，可以转换成html，pdf等格式（左侧有一个可见的冒号和四个不可见的空格）<br>代码块 2<br>   这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）<br>   :    代码块（左侧有八个不可见的空格）</p>
+<h3 id="3-超链接"><a href="#3-超链接" class="headerlink" title="3. 超链接"></a>3. 超链接</h3><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式，行内式使用较多。<br><strong>语法说明：</strong><br>  []里写链接文字，()里写链接地址, ()中的”“中可以为链接指定title属性，title属性可加可不加。title属性的效果是鼠标悬停在链接上会出现指定的 title文字。<a href="链接地址 “链接标题”">链接文字</a>’这样的形式。链接地址与链接标题前有一个空格。<br><strong>代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">欢迎来到[vida77](https://vida77.github.io/)</div><div class="line">欢迎来到[vida77](https://vida77.github.io/ &quot;vida77&quot;)</div></pre></td></tr></table></figure></p>
+<p><strong>显示效果：</strong><br>欢迎来到<a href="https://vida77.github.io/" target="_blank" rel="external">vida77</a><br>欢迎来到<a href="https://vida77.github.io/" title="vida77" target="_blank" rel="external">vida77</a></p>
+<h3 id="4-插入图片"><a href="#4-插入图片" class="headerlink" title="4. 插入图片"></a>4. 插入图片</h3><p>图片的创建方式与超链接相似，而且和超链接一样也有两种写法，行内式和参考式写法。<br>语法中图片Alt的意思是如果图片因为某些原因不能显示，就用定义的图片Alt文字来代替图片。 图片Title则和链接中的Title一样，表示鼠标悬停与图片上时出现的文字。Alt 和 Title 都不是必须的，可以省略，但建议写上。<br><strong>代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">![图片Alt](图片地址 “图片Title”)</div><div class="line">这是我不能承受的帅：</div><div class="line">![这是我不能承受的帅](http://img.isfashion.com/0707/0GnLlzSHs2.jpeg &quot;男神&quot;)</div></pre></td></tr></table></figure></p>
+<p><strong>显示效果：</strong><br>这是我不能承受的帅：<br><img src="http://img.isfashion.com/0707/0GnLlzSHs2.jpeg" alt="这是我不能承受的帅" title="男神"></p>
+<h3 id="5-锚点"><a href="#5-锚点" class="headerlink" title="5. 锚点"></a>5. 锚点</h3><pre><code>在你准备跳转到的指定标题后插入锚点{#标记}，然后在文档的其它地方写上连接到锚点的链接。
+</code></pre><p><strong> 代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">### 1. 斜体和粗体&#123;#index&#125;</div><div class="line">跳转到[斜体和粗体](#index)</div></pre></td></tr></table></figure></p>
+<h3 id="6-分割线"><a href="#6-分割线" class="headerlink" title="6.分割线"></a>6.分割线</h3><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：<br><strong> 代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* * *</div><div class="line">***</div><div class="line">*****</div><div class="line">- - -</div><div class="line">---------------------------------------</div></pre></td></tr></table></figure></p>
+
           
         
       
@@ -403,7 +410,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/18/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/07/18/hello-world/" itemprop="url">SEO 要点</a></h1>
         
 
         <div class="post-meta">
@@ -452,15 +459,27 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <ul>
+<li>1.语义化html标签，用合适的标签嵌套合适的内容，不可过分依赖div，对浏览器更友善就能更容易被抓取。</li>
+<li>2.重要的内容html代码放在前面，放在左边。搜索引擎爬虫是从左往右，从上到下进行抓取的，利用布局来实现重要的代码在上面</li>
+<li>3.重要内容要写在html架构里面，蜘蛛不会抓取js的内容，</li>
+<li>4.尽量减少使用iframe，因为蜘蛛不会抓取iframe的内容。</li>
+<li>5.为图片img加上alt属性，加了alt就不必加title了，避免搜索引擎认为我们恶意优化。alt能让图片没加载时都能有文字提示。</li>
+<li>6.需要强调的地方加上title，本页面内跳转a标签内也要加title。</li>
+<li>7.重要的地方可以保留文字，有些地方必须用图，但是蜘蛛不会爬img，这时应该设置文本，再用缩进隐藏的方法去掉文字，例如logo的优化就是这样做的。注意隐藏不能用display：none，蜘蛛不会检索display：none的内容，应用这个方法的标签一般是logo，标题等重要信息</li>
+<li>8.尽量做到js、css、html的分离，不要在html中写样式代码。</li>
+<li>9.注释的东西能去掉应该去掉，对搜索引擎更加友好</li>
+<li>10.css放在头部，js放在尾部，尽量使用外链或者工具对css和js进行压缩</li>
+<li>11.减少http的请求，使页面更快加载。</li>
+<li>12.使用本地缓存更快地访问网站，使用cdn网络，加快用户访问速度。</li>
+<li>13.使用G-ZIP压缩，浏览速度更快，搜索引擎抓取信息量更大</li>
+</ul>
+<hr>
+<h4 id="关键一点是头部的title，description，keyword的设置。"><a href="#关键一点是头部的title，description，keyword的设置。" class="headerlink" title="关键一点是头部的title，description，keyword的设置。"></a>关键一点是头部的title，description，keyword的设置。</h4><ul>
+<li>1.title设置不宜过长，要简短，网站的名字与相关的小内容，一般为10-20个字。不能重复</li>
+<li>2.keywords设置10个关键词，没个词不能太长，简短且符合你网站的特点，不能重复</li>
+<li>3.description，50个字内描述你的网站 ( description写原创的话，并包含2-3个关键词比较好 )</li>
+</ul>
 
           
         
@@ -540,7 +559,7 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/归档">
+              <a href="/archives/">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
