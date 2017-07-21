@@ -1678,7 +1678,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8fd9;
+  background: #ffb34b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2848,10 +2848,15 @@ body {
 .site-meta {
   background-image: url("/images/site-meta-bg.png");
   background-size: cover;
+  background-position: 0px -40px;
+}
+.links-of-author {
+  margin-top: 0px;
 }
 .site-author-name {
   color: #f69;
   font-size: 18px;
+  margin-top: 8px;
 }
 .menu .menu-item .fa,
 .menu .menu-item a,
@@ -2863,7 +2868,7 @@ body {
   background-color: #f69;
 }
 .site-subtitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
 }
