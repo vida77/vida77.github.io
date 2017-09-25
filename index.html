@@ -243,6 +243,327 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/21/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哆啦B梦  ❤">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vidayang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/21/blog/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T09:58:48+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="从输入-URL-到页面加载完成的过程中都发生了什么"><a href="#从输入-URL-到页面加载完成的过程中都发生了什么" class="headerlink" title="从输入 URL 到页面加载完成的过程中都发生了什么"></a>从输入 URL 到页面加载完成的过程中都发生了什么</h2><hr>
+<p>###1. 过程描述</p>
+<blockquote>
+<ul>
+<li>浏览器查找域名对应的 IP 地址；</li>
+<li>浏览器根据 IP 地址与服务器建立 socket 连接；</li>
+<li>浏览器与服务器通信： 浏览器请求，服务器处理请求；</li>
+<li>浏览器与服务器断开连接。</li>
+</ul>
+</blockquote>
+<hr>
+<p>###2. 根据域名查找IP地址</p>
+<p>#####概念解析</p>
+<blockquote>
+<ul>
+<li>IP地址：IP协议为互联网上的每一个网络和每一台主机分配的一个逻辑地址。IP地址如同门牌号码，通过 IP地址才能确定一台主机位置。服务器本质也是一台主机，想要访问某个服务器，必须先知道它的IP地址；</li>
+<li>域名(HOST)：IP 地址由四个数字组成，中间用点号连接，在使用过程中难记忆且易输入错误，所以用我们熟悉的字母和数字组合来代替纯数字的 IP 地址，比如我们只会记住 www.baidu.com（百度域名） 而不是 220.181.112.244（百度的其中一个 IP 地址）；</li>
+<li>DNS：每个域名都对应一个或多个提供相同服务服务器的IP地址，只有知道服务器IP地址才能建立连接，所以需要通过 DNS 把域名解析成一个 IP 地址。</li>
+</ul>
+</blockquote>
+<p>知道了上面的概念，大概就知道了想要获得服务器的门牌号码，需要先将域名转换成IP地址。转换过程如下（以查询 www.baidu.com 的 IP地址为例，其中2、3、4步均在上一步未查询成功的情况下进行）：</p>
+<p>#####查找过程</p>
+<blockquote>
+<ul>
+<li>浏览器搜索自己的 DNS 缓存（维护一张域名与 IP 地址的对应表）；</li>
+<li>搜索操作系统的 hosts 文件（ Windows 环境下，维护一张域名与 IP 地址的对应表）；</li>
+<li>操作系统将域名发送至 LDNS（本地区域名服务器，如果你在学校接入互联网，则LDNS服务器就在学校，如果通过电信接入互联网，则LDNS服务器就在你当地的电信那里。）LDNS查询自己的DNS缓存（一般查找成功率在 80% 左右），查找成功则返回结果，失败则发起一个迭代 DNS 解析请求;</li>
+<li>LDNS向RootNameServer（根域名服务器，其虽然没有每个域名的的具体信息，但存储了负责每个域，如 com、net、org等的解析的顶级域名服务器的地址）发起请求，此处，Root Name Server 返回 com 域的顶级域名服务器的地址;</li>
+<li>LDNS 向 com 域的顶级域名服务器发起请求，返回 baidu.com 域名服务器地址；</li>
+<li>LDNS 向 baidu.com 域名服务器发起请求，得到 www.baidu.com 的 IP 地址；</li>
+<li>LDNS 将得到的 IP 地址返回给操作系统，同时自己也将 IP 地址缓存起来；</li>
+<li>操作系统将 IP 地址返回给浏览器，同时自己也将 IP 地址缓存起来；</li>
+<li>至此，浏览器已经得到了域名对应的 IP 地址。</li>
+</ul>
+</blockquote>
+<p>#####补充说明</p>
+<blockquote>
+<ul>
+<li>域名与URL是两个概念：域名是一台或一组服务器的名称，用来确定服务器在Internet上的位置；URL 是统一资源定位符，用来确定某一个文件的具体位置，例如，zhihu.com是知乎的域名，根据这个域名可以找到知乎的服务器，zhihu.com/people/CompileYouth 是URL，可以根据这个URL定位我的知乎主页；<br>IP 地址与域名不是一一对应的关系：可以把多个提供相同服务的服务器IP设置为同一个域名，但在同一时刻一个域名只能解析出一个 IP地址；同时，一个 IP 地址可以绑定多个域名，数量不限；</li>
+</ul>
+</blockquote>
+<hr>
+<p>###3. 数据传输</p>
+<p>当服务器与主机建立了连接之后，下面主机便与服务器进行通信。网页请求是一个单向请求的过程，即是一个主机向服务器请求数据，服务器返回相应的数据的过程。</p>
+<blockquote>
+<ul>
+<li>浏览器根据 URL 内容生成 HTTP 请求，请求中包含请求文件的位置、请求文件的方式等等；</li>
+<li>服务器接到请求后，会根据 HTTP 请求中的内容来决定如何获取相应的 HTML 文件；</li>
+<li>服务器将得到的 HTML 文件发送给浏览器；</li>
+<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页；</li>
+<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML ；</li>
+</ul>
+</blockquote>
+<hr>
+<p>###4. 断开连接：四次挥手</p>
+<blockquote>
+<ul>
+<li>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</li>
+<li>服务器接到请求后发送确认收到请求的信号（知道了）；</li>
+<li>服务器向主机发送断开通知（我也该走了）；</li>
+<li>主机接到断开通知后断开连接并反馈一个确认信号（嗯，好的），服务器收到确认信号后断开连接；</li>
+</ul>
+</blockquote>
+<p>#####补充说明</p>
+<blockquote>
+<ul>
+<li><p>为什么服务器在接到断开请求时不立即同意断开：当服务器收到断开连接的请求时，可能仍然有数据未发送完毕，所以服务器先发送确认信号，等所有数据发送完毕后再同意断开。</p>
+</li>
+<li><p>第四次握手后，主机发送确认信号后并没有立即断开连接，而是等待了 2 个报文传送周期，原因是：如果第四次握手的确认信息丢失，服务器将会重新发送第三次握手的断开连接的信号，而服务器发觉丢包与重新发送的断开连接到达主机的时间正好为 2 个报文传输周期。</p>
+</li>
+</ul>
+</blockquote>
+<p>这篇文章大致的描述了输入url到页面加载完成的整个过程，我个人感觉描述还不错，所以就想放到自己的博客来，供自己和大家分享和学习。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哆啦B梦  ❤">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vidayang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/14/bug/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T14:38:12+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Bug监管方案"><a href="#Bug监管方案" class="headerlink" title="Bug监管方案"></a>Bug监管方案</h1><hr>
+<h3 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1. 前期准备"></a>1. 前期准备</h3><blockquote>
+<ul>
+<li>参予组长周会，记录每周提测项目及负责人;</li>
+<li>建立每周负责人讨论组，方便沟通;</li>
+</ul>
+</blockquote>
+<h3 id="2-监管实施"><a href="#2-监管实施" class="headerlink" title="2. 监管实施"></a>2. 监管实施</h3><blockquote>
+<ul>
+<li>每天<strong>下午18点</strong>，各项目负责人提供如下信息<strong>（具体到每个项目参与者）</strong>格式如下：<br>  参与人A：<br>  &emsp;&emsp;&emsp;&emsp;·0 昨日未完成数<br>  &emsp;&emsp;&emsp;&emsp;·1 今日新增数<br>  &emsp;&emsp;&emsp;&emsp;·2 已解决数<br>  &emsp;&emsp;&emsp;&emsp;·3 未解决数<br>  &emsp;&emsp;&emsp;&emsp;·4 未解决原因<br>  &emsp;&emsp;&emsp;&emsp;·5 预计解决时间<br>  参与人B：<br>  &emsp;&emsp;&emsp;&emsp;·0 昨日未完成数<br>  &emsp;&emsp;&emsp;&emsp;·1 今日新增数<br>  &emsp;&emsp;&emsp;&emsp;·2 已解决数<br>  &emsp;&emsp;&emsp;&emsp;·3 未解决数<br>  &emsp;&emsp;&emsp;&emsp;·4 未解决原因<br>  &emsp;&emsp;&emsp;&emsp;·5 预计解决时间</li>
+</ul>
+</blockquote>
+<h3 id="3-统计上报"><a href="#3-统计上报" class="headerlink" title="3. 统计上报"></a>3. 统计上报</h3><blockquote>
+<ul>
+<li>汇总各项目bug情况；</li>
+<li>发送至负责人讨论组由负责人核验，无误后发送至QQ群；</li>
+</ul>
+</blockquote>
+<h3 id="4-监管标准"><a href="#4-监管标准" class="headerlink" title="4. 监管标准"></a>4. 监管标准</h3><blockquote>
+<ul>
+<li><p>考虑初测试阶段bug量较多，进入测试平台期后<code>（bug量减少情况基本稳定）</code>，为鼓励和推动bug修复工作，依照如下标准每周进行评比：</p>
+</li>
+<li><p>评比细则：<strong>（落实到每个项目参与者）</strong><br>  ·0 时间标准：当日下午<strong>三点之前</strong>的bug,当日完成，不能完成需提供原因及预计完成时间；<br>   ·1 数量标准：当日bug数量如<strong>少于十个</strong>需要当天完成修改任务，超过十个且不能完成需提供原因及预计完成时间；<br>   .3 每周逾期次数大于<strong>3次</strong>，团队贡献费<strong>10元/人</strong>。</p>
+</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/boujour/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -550,7 +871,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
