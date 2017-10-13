@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="浅谈前端跨域的几种解决方式1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被">
+<meta name="description" content="1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被这个JavaScript修">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈前端跨域的几种解决方式">
 <meta property="og:url" content="http://yoursite.com/2017/09/28/origin/index.html">
 <meta property="og:site_name" content="vidayang">
-<meta property="og:description" content="浅谈前端跨域的几种解决方式1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被">
-<meta property="og:updated_time" content="2017-09-28T07:56:08.409Z">
+<meta property="og:description" content="1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被这个JavaScript修">
+<meta property="og:updated_time" content="2017-10-13T01:55:42.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈前端跨域的几种解决方式">
-<meta name="twitter:description" content="浅谈前端跨域的几种解决方式1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被">
+<meta name="twitter:description" content="1. 同源策略JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被这个JavaScript修">
 
 
 
@@ -309,7 +309,7 @@
       
 
       
-        <h2 id="浅谈前端跨域的几种解决方式"><a href="#浅谈前端跨域的几种解决方式" class="headerlink" title="浅谈前端跨域的几种解决方式"></a>浅谈前端跨域的几种解决方式</h2><h3 id="1-同源策略"><a href="#1-同源策略" class="headerlink" title="1. 同源策略"></a>1. 同源策略</h3><p>JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被这个JavaScript修改（比如说获取你的卡号和密码，又或者是转账到黑客的账户上等等），后果会非常严重！而同源策略就为了防止这种事情发生，它规定了A网站下的JS文件只能操作A网站下的数据，不能去操作B网站的数据。</p>
+        <h3 id="1-同源策略"><a href="#1-同源策略" class="headerlink" title="1. 同源策略"></a>1. 同源策略</h3><p>JavaScript 的同源策略，是由Netscape提出的一个著名的安全策略，为了阻止A站的JS去操作别的网站的数据。你想啊，你现在打开了浏览器，在一个tab窗口中打开了银行网站，在另外一个tab窗口中打开了一个恶意网站，而那个恶意网站挂了一个的专门修改银行信息的JavaScript，当你访问这个恶意网站并且执行它JavaScript时，你的银行页面就会被这个JavaScript修改（比如说获取你的卡号和密码，又或者是转账到黑客的账户上等等），后果会非常严重！而同源策略就为了防止这种事情发生，它规定了A网站下的JS文件只能操作A网站下的数据，不能去操作B网站的数据。</p>
 <p>为了方便理解,我们把这个词拆分成同源和策略这2个词吧。</p>
 <p>所谓<strong>同源</strong>指的就是指资源是来自同一个源的。如果两个页面拥有相同的协议，端口号，和主机（包括子域名和主域名），那么这两个页面就属于同一个源。</p>
 <p>所谓<strong>策略</strong>指的是可以做什么事情。同一个源下的JS可以操作同一个源下的数据。</p>
@@ -443,8 +443,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/12/array/" rel="prev" title="数组方法">
-                数组方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/12/array/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅谈前端跨域的几种解决方式"><span class="nav-number">1.</span> <span class="nav-text">浅谈前端跨域的几种解决方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-同源策略"><span class="nav-number">1.1.</span> <span class="nav-text">1. 同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是跨域"><span class="nav-number">1.2.</span> <span class="nav-text">2. 什么是跨域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-同源策略"><span class="nav-number">1.</span> <span class="nav-text">1. 同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是跨域"><span class="nav-number">2.</span> <span class="nav-text">2. 什么是跨域</span></a></li></ol></div>
             
 
           </div>

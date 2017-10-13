@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/10/12/array/</loc>
+    <loc>http://yoursite.com/2017/09/28/origin/</loc>
     
-    <lastmod>2017-10-12T09:52:36.340Z</lastmod>
+    <lastmod>2017-10-13T01:55:42.979Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/09/28/origin/</loc>
+    <loc>http://yoursite.com/2017/10/12/array/</loc>
     
-    <lastmod>2017-09-28T07:56:08.409Z</lastmod>
+    <lastmod>2017-10-13T01:55:42.913Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/25/blog/</loc>
+    
+    <lastmod>2017-10-13T01:55:42.833Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2017/09/20/git/</loc>
     
     <lastmod>2017-09-28T07:56:08.369Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/09/25/blog/</loc>
-    
-    <lastmod>2017-09-25T05:58:46.462Z</lastmod>
     
   </url>
   
