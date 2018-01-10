@@ -243,6 +243,125 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/compare/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哆啦B梦  ❤">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vidayang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/10/compare/" itemprop="url">数组对象比较</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T11:28:10+08:00">
+                2018-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>数组对象(其实就是一个json对象)，比如<code>var courseJson = [{chapter:&#39;2&#39;,section:&#39;3&#39;,name=&#39;part1&#39;},
+{chapter:&#39;2&#39;,section:&#39;1&#39;,name=&#39;part2&#39;},{chapter:&#39;1&#39;,section:&#39;2&#39;,name=&#39;part3&#39;}]</code><br>注意：直接写出来的是json字符串形式，<code>JSON.parse(courseJson)</code>转成真正的json再做处理。</p>
+</blockquote>
+<h3 id="1-只比较一个属性"><a href="#1-只比较一个属性" class="headerlink" title="1. 只比较一个属性:"></a>1. 只比较一个属性:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//对象数组比较</div><div class="line"> courseJson.sort(compare(&quot;section&quot;));</div><div class="line"> console.log(courseJson);</div><div class="line"></div><div class="line"> function compare(prop) &#123;</div><div class="line">    return function(obj1, obj2) &#123;</div><div class="line">        var val1 = obj1[prop];</div><div class="line">        var val2 = obj2[prop];</div><div class="line">        if (val2 &lt; val1) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125; else if (val2 &gt; val1) &#123;</div><div class="line">            return -1;</div><div class="line">        &#125; else &#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-比较两个属性"><a href="#2-比较两个属性" class="headerlink" title="2. 比较两个属性:"></a>2. 比较两个属性:</h3><p><code>先比较第一个，第一个如果相等，然后比较第二个</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> courseJson.sort(compare(&quot;chapter&quot;, &quot;section&quot;));</div><div class="line"> console.log(courseJson);</div><div class="line"> function compare() &#123;</div><div class="line">    var arg = arguments;</div><div class="line">    return function(obj1, obj2) &#123;</div><div class="line">        var val1 = obj1[arg[0]];</div><div class="line">        var val2 = obj2[arg[0]];</div><div class="line">        //先比较对象第一个属性</div><div class="line">        if (val2 &lt; val1) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125; else if (val2 &gt; val1) &#123;</div><div class="line">            return -1;</div><div class="line">        &#125; else &#123; //相等的时候比较第二个</div><div class="line">            // return 0;</div><div class="line">            var value1 = obj1[arg[1]];</div><div class="line">            var value2 = obj2[arg[1]];</div><div class="line">            if (value2 &lt; value1) &#123;</div><div class="line">                return 1;</div><div class="line">            &#125; else if (value2 &gt; value1) &#123;</div><div class="line">                return -1;</div><div class="line">            &#125; else &#123;</div><div class="line">                return 0;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-比较多个属性"><a href="#3-比较多个属性" class="headerlink" title="3. 比较多个属性:"></a>3. 比较多个属性:</h3><p><code>不设定比较的参数数量的比较函数</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function compare() &#123;</div><div class="line">   var arg = arguments;</div><div class="line">   var len = arg.length;</div><div class="line">   console.log(&apos;len=&apos;+len);</div><div class="line">   var flag;</div><div class="line">   return function(obj1, obj2) &#123;</div><div class="line"></div><div class="line">       for (var i = 0; i &lt; len; i++) &#123;</div><div class="line">           val1 = obj1[arg[i]];</div><div class="line">           val2 = obj2[arg[i]];</div><div class="line"></div><div class="line">           if (val2 &lt; val1) &#123;</div><div class="line">               flag = 1;</div><div class="line">               break;</div><div class="line">           &#125; else if (val2 &gt; val1) &#123;</div><div class="line">               flag = -1;</div><div class="line">               break;</div><div class="line">           &#125; else &#123; //相等的时候比较第二个</div><div class="line">               flag =  0;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       return flag;</div><div class="line">   &#125;;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/iframe/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -316,12 +435,7 @@
 <h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><blockquote>
 <ul>
 <li>父级使用iframe，需要使用@load绑定加载完毕要执行的函数<br><code>&lt;iframe src=&quot;./static/html/key-word.html&quot; ref=&quot;iframe&quot; @load=&quot;loaded&quot; style=&quot;width: 100%;height: 100%&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; name=&quot;myFrame&quot;&gt;&lt;/iframe&gt;</code></li>
-<li>父页面获取iframe的内容<br><code>iframe.contentWindow//获取iframe的window对象
-iframe.contentWindow.document//获取iframe的document
-iframe.contentWindow.documentElement//获取iframe的html
-iframe.contentWindow.head//获取head
-iframe.contentWindow.body//获取body
-iframe.contentWindow.方法名//获取iframe子页面定义的全局方法</code></li>
+<li>父页面获取iframe的内容<br>iframe.contentWindow//获取iframe的window对象<br>iframe.contentWindow.document//获取iframe的document<br>iframe.contentWindow.documentElement//获取iframe的html<br>iframe.contentWindow.head//获取head<br>iframe.contentWindow.body//获取body<br>iframe.contentWindow.方法名//获取iframe子页面定义的全局方法</li>
 <li>子页面可以用vue,也可以不用，a，b两种方法如下：</li>
 <li><p>a:父页面：<br><code>let keywordFn=this.$refs.iframe.contentWindow.init;
 keywordFn(this.words);</code></p>
@@ -1374,7 +1488,7 @@ keywordFn(this.words);</code></li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

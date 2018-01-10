@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/09/iframe/index.html">
 <meta property="og:site_name" content="vidayang">
 <meta property="og:description" content="1. 父页面代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&amp;lt;template&amp;gt;  &amp;lt;div class=&amp;quot;chartcon&amp;quot;&amp;gt;    &amp;lt;!--&amp;lt;iframe src=&amp;quot;../../../static/htm">
-<meta property="og:updated_time" content="2018-01-09T09:05:43.737Z">
+<meta property="og:updated_time" content="2018-01-09T09:30:54.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue使用iframe方法">
 <meta name="twitter:description" content="1. 父页面代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&amp;lt;template&amp;gt;  &amp;lt;div class=&amp;quot;chartcon&amp;quot;&amp;gt;    &amp;lt;!--&amp;lt;iframe src=&amp;quot;../../../static/htm">
@@ -314,12 +314,7 @@
 <h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><blockquote>
 <ul>
 <li>父级使用iframe，需要使用@load绑定加载完毕要执行的函数<br><code>&lt;iframe src=&quot;./static/html/key-word.html&quot; ref=&quot;iframe&quot; @load=&quot;loaded&quot; style=&quot;width: 100%;height: 100%&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; name=&quot;myFrame&quot;&gt;&lt;/iframe&gt;</code></li>
-<li>父页面获取iframe的内容<br><code>iframe.contentWindow//获取iframe的window对象
-iframe.contentWindow.document//获取iframe的document
-iframe.contentWindow.documentElement//获取iframe的html
-iframe.contentWindow.head//获取head
-iframe.contentWindow.body//获取body
-iframe.contentWindow.方法名//获取iframe子页面定义的全局方法</code></li>
+<li>父页面获取iframe的内容<br>iframe.contentWindow//获取iframe的window对象<br>iframe.contentWindow.document//获取iframe的document<br>iframe.contentWindow.documentElement//获取iframe的html<br>iframe.contentWindow.head//获取head<br>iframe.contentWindow.body//获取body<br>iframe.contentWindow.方法名//获取iframe子页面定义的全局方法</li>
 <li>子页面可以用vue,也可以不用，a，b两种方法如下：</li>
 <li><p>a:父页面：<br><code>let keywordFn=this.$refs.iframe.contentWindow.init;
 keywordFn(this.words);</code></p>
@@ -376,6 +371,10 @@ keywordFn(this.words);</code></li>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/10/compare/" rel="prev" title="数组对象比较">
+                数组对象比较 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -448,7 +447,7 @@ keywordFn(this.words);</code></li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
